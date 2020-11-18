@@ -4,13 +4,13 @@ using System.Text;
 
 namespace TP3
 {
-    [Serializable] class Snake : IReptile
+    [Serializable] class ILizard : IReptile
     {
         private string _name;
         public string name => _name;
 
 
-        public Snake(string name)
+        public ILizard(string name)
         {
             this._name = name;
         }
@@ -18,12 +18,12 @@ namespace TP3
 
         public void Move()
         {
-            Console.WriteLine("{0} is crawling on the ground.", this.name);
+            Console.WriteLine("{0} is crawling on its 4 little legs.", this.name);
         }
 
         public void Eat(string food)
         {
-            Console.WriteLine("{0} is eating {1}. Digestion can take up to 18 months!", this.name, food);
+            Console.WriteLine("{0} is eating {1}.", this.name, food);
         }
 
         public void LayEggs()

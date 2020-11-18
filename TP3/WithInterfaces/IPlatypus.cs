@@ -4,13 +4,13 @@ using System.Text;
 
 namespace TP3
 {
-    [Serializable] class Platypus : IMammal, IReptile
+    [Serializable] class IPlatypus : IMammal, IReptile
     {
         private string _name;
         public string name => _name;
 
 
-        public Platypus(string name)
+        public IPlatypus(string name)
         {
             this._name = name;
         }

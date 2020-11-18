@@ -6,7 +6,7 @@ using System.Text;
 
 namespace TP3
 {
-    [Serializable] class Zoo
+    [Serializable] class IZoo
     {
         private List<IAnimal> _animals;
         private List<IAnimal> Animals => _animals;
@@ -17,7 +17,7 @@ namespace TP3
 
 
 
-        public Zoo()
+        public IZoo()
         {
             this._animals = new List<IAnimal>();
         }
@@ -63,13 +63,13 @@ namespace TP3
             stream.Close();
         }
 
-        public Zoo DeserializeZoo()
+        public IZoo DeserializeZoo()
         {
             FileStream stream = new FileStream(this._filename, FileMode.Open);
 
             BinaryFormatter bf = new BinaryFormatter();
 
-            Zoo ds = (Zoo)bf.Deserialize(stream);
+            IZoo ds = (IZoo)bf.Deserialize(stream);
 
             stream.Close();
 

@@ -4,13 +4,13 @@ using System.Text;
 
 namespace TP3
 {
-    [Serializable] class Lion : IMammal
+    [Serializable] class ICow : IMammal
     {
         private string _name;
         public string name => _name;
 
 
-        public Lion(string name)
+        public ICow(string name)
         {
             this._name = name;
         }
@@ -23,7 +23,7 @@ namespace TP3
 
         public void Eat(string food)
         {
-            Console.WriteLine("{0} is eating {1}. It loves meat.", this.name, food);
+            Console.WriteLine("{0} is eating {1}. It's a herbivore.", this.name, food);
         }
 
         public void Lactate()

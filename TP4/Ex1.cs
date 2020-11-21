@@ -10,7 +10,7 @@ namespace TP4
 
 
 
-        private static object access_grant = new object();
+        static Semaphore semaphore = new Semaphore(1, 1);
 
 
 
@@ -91,24 +91,26 @@ namespace TP4
 
         private static void IncrementSemaphores()
         {
-            lock(access_grant)
-            {
-                int reg = i;
-                Thread.Sleep(2000);
-                reg++;
-                i = reg;
-            }
+            semaphore.WaitOne();
+
+            int reg = i;
+            Thread.Sleep(2000);
+            reg++;
+            i = reg;
+
+            semaphore.Release();
         }
 
         private static void DecrementSemaphores()
         {
-            lock (access_grant)
-            {
-                int reg = i;
-                Thread.Sleep(2000);
-                reg--;
-                i = reg;
-            }
+            semaphore.WaitOne();
+
+            int reg = i;
+            Thread.Sleep(2000);
+            reg--;
+            i = reg;
+
+            semaphore.Release();
         }
 
         public static void Semaphores()

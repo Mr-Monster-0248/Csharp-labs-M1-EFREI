@@ -5,7 +5,7 @@ namespace TP4
 {
     class Program
     {
-        static void Main(string[] args)
+        static void RunEx1()
         {
             Console.WriteLine("####  EXERCISE 1  ####");
 
@@ -14,6 +14,23 @@ namespace TP4
             Ex1.Swap();
 
             Ex1.Semaphores();
+        }
+
+        static void RunEx2()
+        {
+            Console.WriteLine("####  EXERCISE 2  ####");
+
+            Ex2.Run();
+        }
+
+
+
+
+        static void Main(string[] args)
+        {
+            RunEx1();
+
+            RunEx2();
         }
     }
 }
